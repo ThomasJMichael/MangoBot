@@ -9,7 +9,7 @@ public class EventListener extends ListenerAdapter {
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event) {
         String message = event.getMessage().getContentRaw();
-        if (message.equals("!nasty")){
+        if (message.contains("!nasty")){
             String messageToSend = "So nasty, bro. \n \t Nastiness level is now " + nastyCount + ".";
             event.getChannel().sendMessage(messageToSend).queue();
             nastyCount++;
